@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/ASUS/CLionProjects/Proyecto2Progra3/Matriz.cpp
+Nodo.h
+C:/Users/ASUS/CLionProjects/Proyecto2Progra3/Nodo.h
+Matriz.h
+C:/Users/ASUS/CLionProjects/Proyecto2Progra3/Matriz.h
+fstream
+-
+
+C:/Users/ASUS/CLionProjects/Proyecto2Progra3/Matriz.h
+iostream
+-
+Nodo.h
+C:/Users/ASUS/CLionProjects/Proyecto2Progra3/Nodo.h
+
+C:/Users/ASUS/CLionProjects/Proyecto2Progra3/Nodo.cpp
+iostream
+-
+Nodo.h
+C:/Users/ASUS/CLionProjects/Proyecto2Progra3/Nodo.h
+
+C:/Users/ASUS/CLionProjects/Proyecto2Progra3/Nodo.h
+
+C:/Users/ASUS/CLionProjects/Proyecto2Progra3/main.cpp
+iostream
+-
+Matriz.h
+C:/Users/ASUS/CLionProjects/Proyecto2Progra3/Matriz.h
+Nodo.h
+C:/Users/ASUS/CLionProjects/Proyecto2Progra3/Nodo.h
+
