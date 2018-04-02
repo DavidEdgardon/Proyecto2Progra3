@@ -59,34 +59,34 @@ void Matriz::sumaMatriz(Nodo *listaA , string nombreA , Nodo *listaB ,string nom
         return;
     }
 
-    int v1,v2;
+    int valor1,valor2;
     if (archivosA.fail() && archivosB.fail()){
         cerr<<"Error; Al abrir archivo"<<endl;
         return;
     }
     int cont=0, getline=0;
-    while(archivosA>>v1 && archivosB>>v2){
+    while(archivosA>>valor1 && archivosB>>valor2){
         if(cont!=tam){
-            if(v1==0 && v2==0){
+            if(valor1==0 && valor2==0){
                 continue;
             }
             cont ++;
-            cout<<(v1+v2)<<" ";
+            cout<<(valor1+valor2)<<" ";
             if(getline==3) {
                 archivosuma<<'\n';
                 getline=0;
             }
-            archivosuma<<v1+v2<<' ';
+            archivosuma<<valor1+valor2<<' ';
             getline++;
         }else {
             cont=0;
-            cout<<endl<<(v1+v2)<<" ";
+            cout<<endl<<(valor1+valor2)<<" ";
             if(getline==3) {
                 archivosuma<<'\n';
                 getline=0;
             }
             getline++;
-            archivosuma<<v1+v2<<' ';
+            archivosuma<<valor1+valor2<<' ';
             cont++;
         }
     }
@@ -105,34 +105,34 @@ void Matriz::restaMatriz(Nodo *listaA , string nombreA , Nodo *listaB ,string no
         return;
     }
 
-    int v1,v2;
+    int valor1,valor2;
     if (archivosA.fail() && archivosB.fail()){
         cerr<<"Error; Al abrir archivo"<<endl;
         return;
     }
     int cont=0, getline=0;
-    while(archivosA>>v1 && archivosB>>v2){
+    while(archivosA>>valor1 && archivosB>>valor2){
         if(cont!=tam){
-            if(v1==0 && v2==0){
+            if(valor1==0 && valor2==0){
                 continue;
             }
             cont ++;
-            cout<<(v1-v2)<<" ";
+            cout<<(valor1-valor2)<<" ";
             if(getline==3) {
                 archivoresta<<'\n';
                 getline=0;
             }
-            archivoresta<<v1-v2<<' ';
+            archivoresta<<valor1-valor2<<' ';
             getline++;
         }else {
             cont=0;
-            cout<<endl<<(v1-v2)<<" ";
+            cout<<endl<<(valor1-valor2)<<" ";
             if(getline==3) {
                 archivoresta<<'\n';
                 getline=0;
             }
             getline++;
-            archivoresta<<v1-v2<<' ';
+            archivoresta<<valor1-valor2<<' ';
             cont++;
         }
     }
@@ -198,4 +198,27 @@ void Matriz::multiplicatMatriz(Nodo *listaA, string nombreA, Nodo *listaB, strin
         return;
     }
 
+}
+
+int Matriz::dMatriz(Nodo *Lista, string nombreA, int tam) {
+    ofstream matrizD("matrizDeterminante.dat");
+    ifstream matrizDeter(nombreA, ios::in);
+    if (matrizDeter.fail()) {
+        cerr << "Error al abrir el archivo " << endl;
+        return -1;
+    }
+    int valor;
+    int cont=0;
+    int total=0;
+    if (tam==1){
+        int arr[0];
+        while (matrizDeter>>valor){
+            arr[cont]=valor;
+            cont++;
+        }
+        total=arr[0];
+        matrizD  <<total;
+        return total;
+    }
+    matrizDeter.close();
 }
