@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
     int opc = 0;
-    string a,b;
+    string a,b,x,z;
     Nodo *listaA=0,*listaB=0,*listaMA=0,*listaMB=0,*listaD=0,*listaDD=0;
     do {
         cout << "*** O P E R A C I O N E S  C O N  M A T R I C E S ***" << endl;
@@ -39,20 +39,20 @@ int main() {
                 cout << endl;
                 break;
             case 2:
-                while (a != "matrizA.dat") {
+                while (x != "matrizA.dat") {
                     cout << "Ingrese el nombre del archivo de la Matriz A: ";
-                    cin >> a;
-                    Matriz::consultarMatriz(a, listaA);
-                    Matriz::imprimir(3, listaA, a);
+                    cin >> x;
+                    Matriz::consultarMatriz(x, listaA);
+                    Matriz::imprimir(3, listaA, x);
                 }
-                while (b != "matrizB.dat") {
+                while (z != "matrizB.dat") {
                     cout << endl << "Ingrese el nombre del arhivo de la Matriz B: ";
-                    cin >> b;
-                    Matriz::consultarMatriz(b, listaB);
-                    Matriz::imprimir(3, listaB, b);
+                    cin >> z;
+                    Matriz::consultarMatriz(z, listaB);
+                    Matriz::imprimir(3, listaB, z);
                 }
                 cout << endl << "*** R E S P U E S T A ***" << endl;
-                Matriz::restaMatriz(listaA, a, listaB, b, 3);
+                Matriz::restaMatriz(listaA, x, listaB, z, 3);
                 cout << endl;
                 break;
             case 3:
@@ -104,3 +104,4 @@ int main() {
         }
         } while (opc != 5);
     }
+
