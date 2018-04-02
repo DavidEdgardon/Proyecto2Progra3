@@ -5,8 +5,8 @@ using namespace std;
 
 int main() {
     int opc = 0;
-    string a,b,x,z;
-    Nodo *listaA=0,*listaB=0,*listaMA=0,*listaMB=0,*listaD=0,*listaDD=0;
+    string a, b, x, z;
+    Nodo *listaA = 0, *listaB = 0, *listaMA = 0, *listaMB = 0, *listaD = 0, *listaDD = 0;
     do {
         cout << "*** O P E R A C I O N E S  C O N  M A T R I C E S ***" << endl;
         cout << "1. Suma de matrices" << endl;
@@ -72,36 +72,44 @@ int main() {
                 }
 
                 cout << endl << "*** R E S P U E S T A ***" << endl;
-                cout<< "ESTAMOS EN MANTENIMIENTO; disculpe las molestias."<<endl<<endl;
+                cout << "ESTAMOS EN MANTENIMIENTO; disculpe las molestias." << endl << endl;
                 break;
             case 4:
                 int opc;
                 cout << "Que tipo matriz desea encontrar la determinante: " << endl;
-                cout << "1. 2X2: " << endl;
-                cout << "2. 3x3: " << endl;
+                cout << "1. 1X1: " << endl;
+                cout << "2. 2X2: " << endl;
+                cout << "3. 3x3: " << endl;
                 cin >> opc;
                 if (opc == 1) {
                     while (a != "matrizD.dat") {
                         cout << "Ingrese el nombre del archivo de la Matriz D: ";
                         cin >> a;
                         Matriz::consultarMatriz(a, listaA);
-                        Matriz::imprimir(2, listaMB, a);
+                        Matriz::imprimir(1, listaMB, a);
+                        cout << endl << "*** R E S P U E S T A ***" << endl;
+                        cout << "Determinante: " << Matriz::dMatriz(listaD, a, 1) << endl << endl;
                     }
-                    cout << endl << "*** R E S P U E S T A ***" << endl;
-                    cout<<"Determinante: "<<Matriz::determinanteMatriz(listaD,a,2)<<endl<<endl;
-                } else if (opc == 2) {
+                     } else if (opc == 2) {
                     while (a != "matrizDD.dat") {
                         cout << "Ingrese el nombre del archivo de la Matriz DD : ";
                         cin >> a;
                         Matriz::consultarMatriz(a, listaA);
-                        Matriz::imprimir(3, listaMB, a);
+                        Matriz::imprimir(2, listaMB, a);
+                        cout << endl << "*** R E S P U E S T A ***" << endl;
+                        cout << "Determinante: " << Matriz::determinanteMatriz(listaD, a, 2) << endl << endl;
                     }
-                    cout << endl << "*** R E S P U E S T A ***" << endl;
-                    cout<<"Determinante: "<<Matriz::Determinante(listaDD,a,3)<<endl<<endl;
+                } else if (opc == 3) {
+                    while (a != "matrizDDD.dat") {
+                        cout << "Ingrese el nombre del archivo de la Matriz DDD : ";
+                        cin >> a;
+                        Matriz::consultarMatriz(a, listaA);
+                        Matriz::imprimir(3, listaMB, a);
+                        cout << endl << "*** R E S P U E S T A ***" << endl;
+                        cout << "Determinante: " << Matriz::Determinante(listaDD, a, 3) << endl << endl;
+                    }
                 }
-
                 break;
         }
-        } while (opc != 5);
+    }while (opc != 5);
     }
-
