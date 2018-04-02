@@ -1,5 +1,6 @@
 
 
+
 #ifndef PROYECTO2PROGRA3_MATRIZ_H
 #define PROYECTO2PROGRA3_MATRIZ_H
 
@@ -15,6 +16,7 @@ class Matriz{
         static void imprimir(int,Nodo *lista, string nombre);
        static int Determinante( Nodo *Lista, string, int);
     static int determinanteMatriz(Nodo *lista, string , int);
+    static int dMatriz(Nodo *lista, string , int);
     static void multiplicatMatriz(Nodo* listaA ,string, Nodo * listaB, string,int);
     };
 
